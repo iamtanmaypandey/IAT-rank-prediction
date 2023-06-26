@@ -109,7 +109,15 @@
     <script>
         function getRank() {
             marks_list = [0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240]
-            gen_list = [65000,60000,50000,42000,35000,30000,22000,17000,13000,8500,7500,6100,5500,4100,2700,1700,1100,650,250,100,50,10,1]
+            gen_lis = [
+            65000,60000,50000,42000,350000,30000,22000,17000,13000,8500,7500,6100,5500,4100,2700,2200,1700,1100,650,250,100,50,40,20,1]
+            gen_list = []
+            len_gen = gen_lis.length;
+            for(var i = 0;i<len_gen;i++){
+                new_rank = Math.round((gen_lis[i]/3)*(34751/21361));
+                gen_list.push(new_rank);
+                
+            }
             var marks  = parseInt(document.getElementById('marks').value);
             var cat = parseInt(document.getElementById('cat').value);
             var name = document.getElementById('cats');
@@ -129,10 +137,22 @@
                 if(marks>0 && marks<240){
                     indexf = Math.round(marks/10);
                     general = gen_list[indexf];
-                    ews = Math.round(gen_list[indexf]/20);
-                    obc = Math.round(gen_list[indexf]/5.88);
-                    sc = Math.round(gen_list[indexf]/24);
-                    st = Math.round(gen_list[indexf]/30);
+                    ews = Math.round(gen_list[indexf]/12.5);
+                    obc = Math.round(gen_list[indexf]/3.94);
+                    sc = Math.round(gen_list[indexf]/9.42);
+                    st = Math.round(gen_list[indexf]/38.14);
+                    if(ews == 0){
+                        ews = 1;
+                    }
+                    if(obc == 0){
+                        obc = 1;
+                    }
+                    if(sc == 0){
+                        sc = 1;
+                    }
+                    if(st == 0){
+                        st = 1;
+                    }
                 }
                 else{
                     general = 'Out of Range';
