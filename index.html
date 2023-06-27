@@ -50,11 +50,12 @@
             <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
                 <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
                     <h1><a href="https://iamtanmaypandey.github.io/IAT-rank-prediction/" rel="dofollow">IAT 2023 Rank Predictor</a></h1>
-                    <p>Please note that this shows the best rank for the marks depending upon previous year data.</p>
                 </div>
                 <div class="formbg-outer">
                     <div class="formbg">
+                        
                         <div class="formbg-inner padding-horizontal--48">
+                        
                             <span class="padding-bottom--15">Enter your details to get your predicted rank</span>
                             <form id="stripe-login">
                                 <div class="field padding-bottom--24">
@@ -79,7 +80,9 @@
                                 </div>
                             </form>
                             <div id="rank" style="display:none">
-
+                                <br>
+                                <p style="background:red;color:white;padding:5px 10px 5px 10px;border-radius:20px;">Please note that this shows the best rank for the marks depending upon previous year data.</p>
+                                <br>
                                 <table border="0px">
                                     <h4>Your predicted Rank:</h4>
                                     <br>
@@ -143,7 +146,7 @@
                     sc = Math.round(gen_list[indexf]/9.42);
                     st = Math.round(gen_list[indexf]/38.14);
 
-                    generals = gen_list[indexf];
+                    generals = gen_list[indexf-1];
                     ewss = Math.round(gen_list[indexf-1]/12.5);
                     obcs = Math.round(gen_list[indexf-1]/3.94);
                     scs = Math.round(gen_list[indexf-1]/9.42);
@@ -175,22 +178,22 @@
                     crr.innerHTML = general + ' to ' + generals;
                 }
                 if(cat == 2){
-                    gener.innerHTML = general + 'to' + generals;
+                    gener.innerHTML = general + ' to ' + generals;
                     name.innerHTML = 'EWS Rank:';
-                    crr.innerHTML = ews + ' to ' ewss;
+                    crr.innerHTML = ews + ' to ' + ewss;
                 }
                 if(cat==3){
-                    gener.innerHTML = general + 'to' + generals;
+                    gener.innerHTML = general + ' to ' + generals;
                     name.innerHTML = 'OBC-NCL Rank:';
                     crr.innerHTML = obc + ' to ' + obcs;
                 }
                 if(cat==4){
-                    gener.innerHTML = general + 'to' + generals;
+                    gener.innerHTML = general + ' to ' + generals;
                     name.innerHTML = 'SC Rank:';
                     crr.innerHTML = sc + ' to ' + scs;
                 }
                 if(cat==5){
-                    gener.innerHTML = general + 'to' + generals;
+                    gener.innerHTML = general + ' to ' + generals;
                     name.innerHTML = 'ST Rank:';
                     crr.innerHTML = st + ' to ' + sts;
                 }
