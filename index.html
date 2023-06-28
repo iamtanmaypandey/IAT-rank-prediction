@@ -147,10 +147,10 @@
                     st = Math.round(gen_list[indexf]/38.14);
 
                     generals = gen_list[indexf-1];
-                    ewss = Math.round(gen_list[indexf+1]/12.5);
-                    obcs = Math.round(gen_list[indexf+1]/3.94);
-                    scs = Math.round(gen_list[indexf+1]/9.42);
-                    sts = Math.round(gen_list[indexf+1]/38.14);
+                    ewss = Math.round(gen_list[indexf-1]/12.5);
+                    obcs = Math.round(gen_list[indexf-1]/3.94);
+                    scs = Math.round(gen_list[indexf-1]/9.42);
+                    sts = Math.round(gen_list[indexf-1]/38.14);
                     
                     if(ews == 0){
                         ews = 1;
@@ -164,28 +164,13 @@
                     if(st == 0){
                         st = 1;
                     }
-                    
-                    if(ewss == 0){
-                        ewss = 1;
-                    }
-                    if(obcs == 0){
-                        obcs = 1;
-                    }
-                    if(scs == 0){
-                        scs = 1;
-                    }
-                    if(sts == 0){
-                        sts = 1;
-                    }
                 }
                 else{
-                    
                     general = 'Out of Range';
                     ews =  'Out of Range';
                     obc =  'Out of Range';
                     sc = 'Out of Range';
                     st = 'Out of Range';
-                    
                 }
                 if(cat == 1){
                     gener.innerHTML = general + ' to ' + generals;
