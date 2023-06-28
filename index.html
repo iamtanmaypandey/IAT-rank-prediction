@@ -138,7 +138,7 @@
             if(marks == '' || marks < 0){
                 alert('Please enter valid marks or marks > 0');
             }else{
-                if(marks>0 && marks<240){
+                if(marks>0 && marks=<240){
                     indexf = Math.round(marks/10);
                     general = gen_list[indexf];
                     ews = Math.round(gen_list[indexf]/12.5);
@@ -179,20 +179,13 @@
                     }
                 }
                 else{
-                    if(marks==240){
-                        general = 1;
-                        ews =  1;
-                        obc =  1;
-                        sc = 1;
-                        st = 1;    
-                    }
-                    else{
+                    
                     general = 'Out of Range';
                     ews =  'Out of Range';
                     obc =  'Out of Range';
                     sc = 'Out of Range';
                     st = 'Out of Range';
-                    }
+                    
                 }
                 if(cat == 1){
                     gener.innerHTML = general + ' to ' + generals;
